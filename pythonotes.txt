@@ -1,0 +1,618 @@
+'''
+More on 2D lists
+Dictionaries
+Tuples
+'''
+
+# Populating a 2D list
+
+def populate(outer_length):
+    inner_list = []
+    outer_list = []
+
+
+    for i in range(outer_length):
+        # print(outer_list)
+        inner_length = int(input(f"Please enter the length for inner list {i+1}: "))
+        inner_list = []
+        for j in range(inner_length):
+            num = int(input(f"Please enter number {j+1} of inner list {i+1}: "))
+            inner_list.append(num)
+
+        # print("Inner list: ", inner_list)
+        outer_list.append(inner_list)
+        # print("Outer list: ", outer_list)
+        # inner_list.clear()
+
+    return outer_list
+
+# outer_length = int(input("Please enter the length of outer list: "))
+
+# print(populate(outer_length))
+
+
+# dictionary is used in real life to get the meaning of a word
+# so essentially every word has a corresponding meaning
+# let's assume that the words are keys and they are used to get the value which is the meaning
+
+my_dict = {"kamran": 13, "zammad": 20, "ronaldo": 39}
+print(my_dict)
+
+# to access a value using the corresponding key, i will use this syntax -> dictionaryName[key]
+print(my_dict["kamran"])
+
+# if you enter a key that does not exist you will get a key error
+
+
+dict1 = {"kamran": 13, "zammad": 20, "ronaldo": 39, "zammad": 21, "zammad": 22, "zammad": 23, "zammad": 24}
+print(dict1)
+
+# if I have a duplicate key in the list, it essentially updates the value of the original key
+# the last key value will be the one stored
+
+my_dict["kamran"] += 1
+print(my_dict)
+
+# how to get all keys of my dictionary
+my_keys = my_dict.keys()
+print(my_keys)
+
+my_values = my_dict.values()
+print(my_values)
+
+print("ron" in my_dict)
+
+# delete a key value pair
+del my_dict["ronaldo"]
+print(my_dict)
+
+def iter_dict(dict1):
+    for key in dict1:
+        print("Key: ", key, end = "\t")
+        print("Value: ", dict1[key])
+
+def iter_dict1(dict1):
+    for key, value in dict1.items():
+        print("Key: ", key, end = "\t")
+        print("Value: ", value)
+
+print("METHOD 1")
+iter_dict(my_dict)
+print("METHOD 2")
+iter_dict1(my_dict)
+
+# use a for loop to populate a dictionary
+
+def pop_dict(length):
+    my_dict = {}
+    for i in range(length):
+        key = input(f"Please enter key for element {i+1}: " )
+        value = input(f"Please enter value for the key {key}: " )
+        my_dict[key] = value
+
+    return my_dict
+
+
+
+
+
+
+# mylen = int(input("Please enter the length of the dictionary: "))
+# print(pop_dict(mylen))
+
+
+
+# tuples
+
+my_tuple = (1,2,3,4,5)
+
+print(my_tuple[-2])
+
+# packing tuples
+
+packed_tuple = 1,2,3
+a,b,c = packed_tuple
+print(a, " ", b, " ", c)
+
+all_ones = (1,1,1,1,1,1)
+
+print(all_ones.count(1))
+print(all_ones.index(1))
+
+for item in my_tuple:
+    print(item)
+
+
+'''
+Problem 1: Dictionary Manipulation
+Write a Python program to perform the following tasks:
+
+Create an empty dictionary called student_scores.
+Prompt the user to enter the names of three students and their corresponding scores.
+Store the student names as keys and their scores as values in the student_scores dictionary.
+Print out the name and score of each student in the dictionary.
+
+Problem 2: Tuple Operations
+Write a Python program to do the following:
+
+Create a tuple called dimensions that contains the dimensions of a rectangle in the format (length, width).
+Calculate and print the area of the rectangle.
+Prompt the user to enter new dimensions for the rectangle.
+Update the dimensions tuple with the new values provided by the user.
+Calculate and print the area of the rectangle with the updated dimensions.
+
+Problem 3: Dictionary and Tuple Combination
+Write a Python program to perform the following tasks:
+
+Create a dictionary called inventory with items as keys and their quantities as values.
+Create a tuple called new_items that contains items and quantities to be added to the inventory in the format [(item1, quantity1), (item2, quantity2), ...].
+Update the inventory dictionary to include the new items and quantities from the new_items tuple.
+Print out the updated inventory.
+
+Problem 4: Dictionary Filtering
+Write a Python program to filter a dictionary based on a given condition:
+
+Create a dictionary called scores with student names as keys and their scores as values.
+Prompt the user to enter a threshold score.
+Create a new dictionary called passed_students that includes only the students whose scores are equal to or greater than the threshold score entered by the user.
+Print out the names and scores of the students who passed.
+'''
+
+
+
+
+
+
+
+
+user_dict = {}
+
+num_entries = int(input("Enter the number of entries you want to add: "))
+
+for i in range(num_entries):
+	key = input("Enter key: ")
+	value = input("Enter value: ")
+	user_dict[key] = value
+
+print("Dictionary:", user_dict)
+
+
+'''
+Conditional statements - If, Elif, Else
+'''
+
+# What are conditional statements?
+# They are only executed if conditions are true
+
+number = int(input("Please enter your age"))
+
+if number >= 18:
+    print("Wow you are an adult")
+
+
+
+else:
+    print("You still got time.")
+
+
+# we must have at least 1 if statement
+#an else statement cant run on its own
+# an elif statement is used when we have 2+ conditions
+# we can have unlimited elif statements
+# only one of the elif and else conditions runs
+# order is important
+
+
+
+
+
+name = input("Please enter your favorite fruit: ")
+
+if name == "mango":
+    print("A very sweet fruit")
+
+elif name == "apple":
+    print("A strange choice.")
+
+else:
+    print("good choice.")
+
+
+# how can i convert a string to lowercase only
+str1 = "JDJKASHJKHDKJSH"
+str1 = str1.lower()
+print("Lowercase string: ", str1)
+
+
+# str1 commands are: uppercase, lowercase, capitalize, title, swapcase(swaps cap and low)
+'''
+Develop a program that asks the user and prints whether it is a leap year or not
+- num % 4 == 0
+2. Takes number as input and prints wether it is psotive, negative or zero
+
+3. titled paragraph
+
+'''
+
+
+
+
+
+'''
+FOR LOOPS - whuy we need them, syntax, usage
+ARRAYS/LISTS
+'''
+
+# a loop runs repeatedly for a specified amount of time
+# it saves you from the trouble of doing things again and again
+
+#if i want to run loop specified amount of times, i will use this
+# USING THIS, VARIABLE I STARTS at i and increases by 1 for every range
+for i in range(100):
+    print(i)
+
+
+# this is the syntax fir custom start and stop values for i
+# the first paremeter is start and second is stop, stop value stops at one less than what is entered.
+
+for i in range(0, 10):
+    print(i)
+
+
+# if i8 want to skip numbers in between, use this syntax
+#the first two parameters are same as above
+#the third is the increments
+#USE NEGATIVE VALUE FOR STEP TO MAKE DESCENDING ORDER
+for i in range(1,10,3):
+    print(i)
+
+
+for i in range(100,1,-1):
+    print(i)
+
+# a list is seperated by commas and enclosed in brackets
+my_list = [1, 2, 3, 4 ,5, 20]
+print("My list is:", my_list)
+print("its data type is: ", type(my_list))
+
+#to use for loops with list we use this syntax
+
+for number in my_list:
+    print(number, end = " ")
+    if number == 20:
+        print("number is in list")\
+
+
+string_list = ["a", "b", "c"]
+
+for letter in string_list:
+    print(letter, end = " ")
+
+
+new_list = (1,3,5,7,9,0)
+
+#the list indexes are the positions in the list
+#first index starts from 0
+# and the last index hence is one less length
+index = 4
+
+print(f"the value of the list at index {index} is {new_list[index]}")
+
+
+'''
+hw
+1. ask user for start and end number and print out alll values in that range
+2. asks user for number between 1-10 and prints out the nuimbers in range 0-100 that are divisible by the nuimber
+
+
+'''
+
+
+mylist = [1,2,3,4]
+
+#This is a function that allows you to enter something to the end of the list
+mylist.append(5)
+
+print("List after appending:", mylist)
+
+#let us try to make our own list by taking input from the user
+userlist = []
+
+for i in range(10):
+    listItem = int(input("Please enter the number you want to append into the list:"))
+    userlist.append(listItem)
+print("user list is:", userlist)
+
+firstlist = [1, 2, 3]
+second = [4,5,6]
+
+#merging two lists using extend command
+firstlist.extend(second)
+print("lists after merging", firstlist)
+
+
+# ADDING A VALUE AT A PARTIOCUALR INDEX
+alist = [1,2,3,4,5]
+alist.insert(2, "hello")
+print("list post insert:", alist)
+
+
+#viewing a value at an index in the list
+llist = [2,2,2,4,4,2,2,4,4,2,]
+number = 4
+print(f"Index of {number} in list:", llist.index(number))
+
+#the pop command to remove an element from list
+plist = [4, 4,3,2,4,2,4,2,4,5,7,4,]
+popped_number = plist.pop()
+print("Number that is popped:", popped_number)
+print("remaining list:", plist)
+RLIST = ["a", "b", "c", "c", "c"]
+RLIST.remove("c")
+print("list after removing: ", RLIST)
+
+for i in range(4):
+    if "c" in RLIST:
+        RLIST.remove("c")
+    else:
+        print("no more r's left, lsit is", RLIST)
+        break
+
+
+
+reverselist = [1,2,3,4,5]
+reverselist.reverse()
+print("reversed list:", reverselist)
+
+sortlist = [12,32,3,2,32,42,32131,232143,21321,34124,321,431,231]
+sortlist.sort()
+print("Sorted list:", sortlist)
+
+list1 = ["b", "a", "c"]
+list1.sort()
+print("list: ", list1)
+
+list1.clear()
+print("cleared: ", list1)
+#problem with extend command is that it modified one of the lists, so how do we do it w out modifying?
+list1 = [1,2,3]
+list2 = [4,5,6]
+#this is called concatenation
+mrgedlist = list1 = list2
+print("merged:", mrgedlist)
+
+print("leng of sort list", len(sortlist))
+
+# slicing a list
+slicelist = [1,23,2,3,13,14,25,546,12,7]
+
+# i only want first 3 elements
+# listname9start;end
+print("first three elements:", slicelist[:3])
+#slicelist[3:]
+#slicelist[-3:
+
+'''
+sort a list in descending order
+check if a list is a palindrom meaning that it can be read the same way forwards and backwards
+removing duplicates from a list so all duped characters are removed-> create new list which contains all the unique characters and no repeats
+find common numbers between two lists, store them in a new list and print out the list
+
+
+'''
+
+
+
+
+
+
+def add(num1, num2):
+    #return num1+num2
+    result = num1 + num2
+    return result
+
+
+x = int(input("Please enter the first number"))
+y = int(input("Please enter the second number"))
+
+#the order of variables being passed through the function is important
+print("Result of adding the two numbers is:", add(x,y))
+
+#write a subtract function
+#check which number is bigger
+# the answer should always be positive
+
+def subtract(num1,num2):
+   if num1>num2:
+    result = num1-num2
+   else:
+    result = num2-num1
+    return result
+
+n = int(input("Please enter the first number"))
+a = int(input("Please enter the second number"))
+
+print("Result of subtracting the numbers is", subtract(n,a))
+
+
+def greet(name):
+  print(f"Hello {name}! Hope you are doing well")
+  print("before return")
+  return
+  print("after return")
+
+
+greet("Kamran")
+def sumfor(n):
+  result = 0
+  for i in range(n):
+    result = result + i + 1
+    return result
+
+
+def main():
+  print("Main function running..")
+  sumfor(5)
+  x = int(input("Please enter the first number"))
+y = int(input("Please enter the second number"))
+
+# I want to calculatre the sum of the first n natural numbers
+#n = 5
+# 1+2+3+4+5
+
+if  __name__ ==  "__main__":
+  main()
+
+def sum(n):
+  if n == 1:
+    return 1
+  else:
+    return n + sum(n-1)
+
+def factorial(n):
+  if n == 1:
+    return 1
+  else:
+    return n * factorial(n-1)
+
+def haha():
+  print("Python is fun!")
+
+'''
+1.write a code that takes 2 numnbers as input first is base second is exponent 2 ^ 8
+2.write custom functions for length max and min
+length takes a string and returns its length
+max - it takes a list of numbers and returns the max
+min - it takes a list of numbers the m9inimum
+3.
+4.
+
+
+'''
+
+
+
+
+
+'''
+nested loops -
+
+'''
+
+# I NEED TO MAKE A BUILDING USIND *S
+# taking height and width from the user
+
+
+
+def build(h,w):
+    for i in range(h):
+        for i in range(w):
+            print("*", end = "")
+    print()
+
+def pattern1(h):
+    width=1
+    for i in range(h):
+        for i in range(w):
+            print("*", end = "")
+        print()
+        width+=1
+
+
+def pyramid(h):
+    for i in range(1,h+1):
+      print(" " * (h - i) + "*" * (2*1-1))
+
+def p2d(list2d):
+    for i in range(len(list2d)):
+        innerlist = list2d[i]
+        for element in innerlist:
+            print(element, end = " ")
+        print()
+
+
+
+height = int(input("Provide the height"))
+width = int(input("PROVIDE THE WIDTH"))
+
+build(height,width)
+
+pyramid(height)
+
+print("list")
+
+
+
+
+list2d = [[1,2,3], [4,5,6], [7,8,9]]
+
+p2d(list2d)
+
+'''
+1. make an inverted pyramid
+2. make a diamond pattern
+populate a 2d list using nested for loops - take length as input from user
+run an outer loop for these many number of times
+
+
+
+'''
+
+
+
+
+'''
+Libraries
+
+'''
+# libraries are pre written packages of code that allloow you to do complex stuff using a single line of code
+# a particular library in python is like a book which has code written in it and you can access that code using book and chapter name
+
+
+
+#to get a library in your code library we si,ply write import and library name
+import random
+import time
+#you nnbed to make sure your library is installed
+#pip install libraryname in terminal
+
+username = input("please enter your name")
+password = ""
+while (len(password) <8):
+    password = input("please enter a password that is minimum 8 characters long")
+
+otp = random.randint(10000000, 99999999)
+
+print("here are your login details")
+print("username:", username)
+print("OTP: ", otp)
+
+def countdown(start):
+    for i in range(start,0, -1):
+        print(i, "...")
+        time.sleep(1)
+    print("countdown finished")
+
+
+countdown(10)
+
+
+
+'''
+1. make a guesssing game using a library. hae the user ehnter the difficulty. easy has numbers 0-9 medium 0-99 hard 100-999
+record the number of tries it takes the usder to guess the answer. if the guess if the user is higher or lower than the number infrom them accordingly
+
+2. make timer using time library take number of minutes from user convert to seconds and then pass through functiuon
+4:59
+4:58
+
+
+'''
+
+from datetime import datetime
+
+now = datetime.now()
+print(now)
+
+def timer(minutes):
+    while (minutes >= 0):
